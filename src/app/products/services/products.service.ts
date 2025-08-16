@@ -47,4 +47,20 @@ export class ProductService {
       .get<Product>(`${baseUrl}/products/${idSlug}`)
       .pipe(tap((resp) => this.productCache.set(idSlug, resp)));
   }
+
+  getProductById(id: string): Observable<Product> {
+    if (this.productCache.has(id)) {
+      return of(this.productCache.get(id)!);
+    };
+
+    return this.http
+      .get<Product>(`${baseUrl}/products/${id}`)
+      .pipe(tap((product) => this.productCache.set(id, product)));
+  }
+
+  updateProduct(productLike: Partial<Product>){
+    console.log('Actualizando Producto');
+    
+  }
+  
 }
