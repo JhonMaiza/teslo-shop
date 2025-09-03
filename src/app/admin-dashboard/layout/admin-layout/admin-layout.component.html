@@ -1,26 +1,23 @@
 <div
-  class="bg-slate-800 w-screen h-screen antialiased text-slate-300 selection:bg-blue-600 selection:text-white"
+  class="bg-slate-800 overflow-y-scroll w-screen h-screen antialiased text-slate-300 selection:bg-blue-600 selection:text-white"
 >
   <div class="flex flex-col relative w-screen">
     <div
       id="menu"
-      class="bg-gray-900 min-h-screen z-10 text-slate-300 w-64 fixed left-0 h-screen"
+      class="bg-gray-900 min-h-screen z-10 text-slate-300 w-64 fixed left-0 h-screen overflow-y-scroll"
     >
       <div id="logo" class="my-4 px-6">
-        <h1 
+        <h1
           routerLink="/"
-          class="text-lg md:text-2xl font-bold text-white font-montserrat cursor-pointer">
+          class="text-lg md:text-2xl font-bold text-white font-montserrat cursor-pointer"
+        >
           Teslo<span class="text-blue-500"> | Shop</span>
         </h1>
         <p class="text-slate-500 text-sm">Manage your actions and activities</p>
       </div>
       <div id="profile" class="px-6 py-10">
-        <p class="text-slate-500">Bienvenido</p>
-        <a
-          h
-          routerLink="/"
-          class="inline-flex space-x-2 items-center"
-        >
+        <p class="text-slate-500">Bienvenido,</p>
+        <a href="#" class="inline-flex space-x-2 items-center">
           <span>
             <img
               class="rounded-full w-8 h-8"
@@ -88,23 +85,26 @@
             <span class="text-lg text-slate-300 font-bold leading-5"
               >Productos</span
             >
-            <span class="text-sm text-white/50 hidden md:block"
-              >Listado de Productos</span
+            <span class="text-sm text-slate-500 hidden md:block"
+              >Listado de productos</span
             >
           </div>
         </a>
+        <!-- Menu Item End -->
 
         <div class="divider my-2"></div>
-        <button 
-            class="btn btn-ghost text-accent w-full"
-            (click)="authService.logout()"        
+
+        <button
+          class="btn btn-ghost text-accent w-full"
+          (click)="authService.logout()"
         >
-            Cerar Sesión
+          Cerrar sesión
         </button>
       </div>
     </div>
   </div>
+
   <div class="flex-1 ml-64 pt-5 px-5">
-      <router-outlet />
+    <router-outlet />
   </div>
 </div>

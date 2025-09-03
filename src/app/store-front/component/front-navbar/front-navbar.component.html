@@ -1,4 +1,4 @@
-<div class="navbar bg-base-100 shadow-sm">
+<div class="navbar bg-base-100">
   <div class="navbar-start">
     <div class="dropdown">
       <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -87,6 +87,9 @@
     </ul>
   </div>
   <div class="navbar-end gap-4">
+    @if (authService.isAdmin()) {
+      <a routerLink="/admin" class="btn text-accent">Admin Panel</a>
+    }
     @if( authService.authStatus() === 'authenticated'){
       <button class="btn btn-ghost">
         {{ authService.user()?.fullName }}
