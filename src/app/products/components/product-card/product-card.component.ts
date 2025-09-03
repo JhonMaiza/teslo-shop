@@ -13,7 +13,7 @@ export class ProductCardComponent {
   product = input.required<Product>();
 
   imageUrl = computed(() => {
-    return `http://localhost:3000/api/files/product/${
+    return `https://nest-teslo-shop-cvq3.onrender.com/api/files/product/${
       this.product().images[0]
     }`;
   });
