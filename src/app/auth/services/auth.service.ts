@@ -2,7 +2,7 @@ import { computed, inject, Injectable, signal } from '@angular/core';
 import { AuthLayoutComponent } from '../layout/auth-layout/auth-layout.component';
 import { User } from '@auth/interfaces/user.interface';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment.development';
+import { environment } from 'src/environments/environment';
 import { AuthResponse } from '@auth/interfaces/auth-response';
 import { catchError, map, Observable, of, tap } from 'rxjs';
 import { rxResource } from '@angular/core/rxjs-interop';
